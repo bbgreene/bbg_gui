@@ -39,7 +39,42 @@ namespace  juce
     g.strokePath (backgroundArc, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
 
     if (slider.isEnabled())
-    {
+    {   // Dial fill path minus or plus
+        if(slider.getMinimum() < 0)
+        {
+            auto radian = juce::MathConstants<float>::twoPi - rotaryStartAngle;
+
+            if(slider.getValue() < 0)
+            {
+                Path valueArcMinus;
+                valueArcMinus.addCentredArc (bounds.getCentreX(),
+                                             bounds.getCentreY(),
+                                             arcRadius,
+                                             arcRadius,
+                                             0.0f,
+                                             0.0f,
+                                             juce::jmap (sliderPos, 0.5f, 0.0f, 0.0f, -radian),
+                                             true);
+                g.setColour (fill);
+                g.strokePath (valueArcMinus, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
+            }
+            else
+            {
+                Path valueArcPlus;
+                valueArcPlus.addCentredArc (bounds.getCentreX(),
+                                            bounds.getCentreY(),
+                                            arcRadius,
+                                            arcRadius,
+                                            0.0f,
+                                            0.0f,
+                                            juce::jmap (sliderPos, 0.5f, 1.0f, 0.0f, radian),
+                                            true);
+                g.setColour (fill);
+                g.strokePath (valueArcPlus, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
+            }
+        }
+        else
+        {
         // Dial fill path
         Path valueArc;
         valueArc.addCentredArc (bounds.getCentreX(),
@@ -53,6 +88,7 @@ namespace  juce
 
         g.setColour (fill);
         g.strokePath (valueArc, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
+        }
     }
     
     // Line.... (arcRadius - 10.0f) changes the length of the line
