@@ -11,10 +11,15 @@ MainComponent::MainComponent()
 
     //Example of solid coloured dial with a simple tick to define current position
     delay.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialSimpleSolid);
+    delay.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, juce::Colours::darkslategrey);
     addAndMakeVisible(delay);
+    
+    //Example of dial with simple tick to define current position and dots on the outside 
+    balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
+    addAndMakeVisible(balance);
 
     
-    setSize (400, 400);
+    setSize (600, 400);
 }
 
 MainComponent::~MainComponent()
@@ -33,4 +38,5 @@ void MainComponent::resized()
 {
     gain.setBounds(0, getHeight() / 2 - 100, 200, 200);
     delay.setBounds(200, getHeight() / 2 - 100, 200, 200);
+    balance.setBounds(400, getHeight() / 2 -100, 200, 200);
 }

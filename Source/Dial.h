@@ -17,13 +17,6 @@
 namespace bbg_gui
 {
 
-//class CustomLookAndFeel : public juce::LookAndFeel_V4
-//{
-//public:
-//    
-//    void drawRotarySlider (Graphics &, int x, int y, int width, int height, float sliderPosProportional, float rotaryStartAngle, float rotaryEndAngle, Slider &);
-//};
-
 class bbg_Dial : public juce::Slider
 {
 public:
@@ -46,7 +39,8 @@ public:
     enum class DialStyle
     {
         kDialLiveStyle,
-        kDialSimpleSolid
+        kDialSimpleSolid,
+        kDialDotStyle
     };
     
     // based on the selection above, each case will call a differenct custom lookAndFeel found in StyleSheet
@@ -64,6 +58,11 @@ public:
                 setLookAndFeel(&dialSimpleSolidLAF);
                 break;
             }
+            case DialStyle::kDialDotStyle:
+            {
+                setLookAndFeel(&dialDotStyleLAF);
+                break;
+            }
         }
     }
     
@@ -72,6 +71,7 @@ private:
     // Instantance of custom lookAndFeel from StyleSheet
     juce::dialLiveStyle dialLiveStyleLAF;
     juce::dialSimpleSolid dialSimpleSolidLAF;
+    juce::dialDotStyle dialDotStyleLAF;
     
     // properties of an individual fader. When a dial is instantiated with variables, these are passed to this function
     void initProperties(juce::String suffix, double rangeStart, double rangeEnd, double intervalValue, double startValue, double returnValue);

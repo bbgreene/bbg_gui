@@ -34,4 +34,13 @@ public:
     void drawRotarySlider(Graphics &, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider &) override;
 };
 
+// A dial with dots class
+class dialDotStyle : public juce::LookAndFeel_V4
+{
+    
+public:
+    
+    void drawRotarySlider (Graphics &, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider &) override;
+};
+
 }
