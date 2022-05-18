@@ -36,8 +36,8 @@ void MainComponent::paint (juce::Graphics& g)
 
 void MainComponent::resized()
 {
-    auto dialSize = 200;
+    auto dialSize = 150;
     gain.setBounds(0, getHeight() / 2 - 100, dialSize, dialSize);
-    delay.setBounds(200, getHeight() / 2 - 100, dialSize, dialSize);
-    balance.setBounds(400, getHeight() / 2 -100, dialSize, dialSize);
+    delay.setBounds(225, getHeight() / 2 - 100, dialSize, dialSize);
+    balance.setBounds(450, getHeight() / 2 -100, dialSize, dialSize);
 }

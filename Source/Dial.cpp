@@ -21,8 +21,11 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
     setRange(rangeStart, rangeEnd, intervalValue);
     setValue(startValue);
-//    setVelocityBasedMode (true); Changes aspects of the scaling used when in velocity-sensitive mode.
+    
+    //Changes aspects of the scaling used when in velocity-sensitive mode.
+//    setVelocityBasedMode (true);
 //    setVelocityModeParameters (1.0, 1, 0.1, false);
+    
     setDoubleClickReturnValue(true, returnValue);
     setLookAndFeel(&dialLiveStyleLAF);
     
@@ -30,7 +33,8 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     setTextValueSuffix(suffix);
     // how can I continuously send a value to the slider when the textbox value is changed?
     
-    // modifies the decimal places of the values displayed in the slider text box. Using this member function and a lambda function called onValueChange, we set the value in the text box to always display three numbers. currently not set for negative numbers
+    // modifies the decimal places of the values displayed in the slider text box.
+    // Using this member function and a lambda function called onValueChange, we set the value in the text box to always display three numbers. currently not set for negative numbers
     onValueChange = [&]()
         {
             if (getValue() < 10)
