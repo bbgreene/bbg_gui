@@ -99,6 +99,34 @@ namespace  juce
     g.drawLine(backgroundArc.getBounds().getCentreX(), backgroundArc.getBounds().getCentreY(), thumbPoint.getX(), thumbPoint.getY(), lineW);
 }
 
+// overriding this function to put textbox in centre of slider/dial
+Slider::SliderLayout dialLiveStyle::getSliderLayout(Slider &slider)
+{
+    auto localBounds = slider.getLocalBounds();
+    
+    Slider::SliderLayout layout;
+    
+    layout.textBoxBounds = localBounds.withY (-1);
+    layout.sliderBounds = localBounds;
+    
+    return layout;
+}
+
+//creating a label and params to put in centre
+Label* dialLiveStyle::createSliderTextBox(Slider & slider)
+{
+    auto* l = new Label();
+    
+    l->setJustificationType(Justification::centred);
+    l->setColour(Label::textColourId, slider.findColour(Slider::textBoxTextColourId));
+    l->setColour (Label::textWhenEditingColourId, slider.findColour (juce::Slider::textBoxTextColourId));
+    l->setColour (Label::outlineWhenEditingColourId, juce::Colours::transparentWhite);
+    l->setInterceptsMouseClicks (false, false);
+    l->setFont (18.0f);
+
+    return l;
+}
+
 void juce::dialSimpleSolid::drawRotarySlider (Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
 {
     float diameter = fmin(width, height) * .9;
