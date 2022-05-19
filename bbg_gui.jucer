@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="tTKOyi" name="bbg_gui" projectType="guiapp" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" cppLanguageStandard="17">
   <MAINGROUP id="Wb8E2A" name="bbg_gui">
     <GROUP id="{7F4A0BA8-DBC9-69B8-9EF7-D0A6D5200A7E}" name="Source">
       <FILE id="v9FYpH" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
