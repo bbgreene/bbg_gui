@@ -12,6 +12,7 @@
 
 #include <JuceHeader.h>
 #include "StyleSheet.h"
+#include "CustomColours.h"
 
 // my name space for calling an instantance of a bbg_Dial
 namespace bbg_gui

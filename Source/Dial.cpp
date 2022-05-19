@@ -18,14 +18,16 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
 //        rotaryParams.endAngleRadians = juce::MathConstants<float>::pi * 3.0f;
 //        setRotaryParameters(rotaryParams);
     
-    setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
-    setRange(rangeStart, rangeEnd, intervalValue);
-    setValue(startValue);
+    // makes the start and end points closer together in terms of range...
+    setRotaryParameters(juce::MathConstants<float>::pi * 1.25f, juce::MathConstants<float>::pi * 2.75f, true);
     
     //Changes aspects of the scaling used when in velocity-sensitive mode.
 //    setVelocityBasedMode (true);
 //    setVelocityModeParameters (1.0, 1, 0.1, false);
     
+    setSliderStyle(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
+    setRange(rangeStart, rangeEnd, intervalValue);
+    setValue(startValue);
     setDoubleClickReturnValue(true, returnValue);
     setLookAndFeel(&dialLiveStyleLAF);
     
@@ -45,8 +47,14 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
                 setNumDecimalPlacesToDisplay (0);
         };
     
-    setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
-    setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::orange);
-    setColour(juce::Slider::ColourIds::trackColourId, juce::Colours::black);
+    //previous colours used
+//    setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
+//    setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::orange);
+//    setColour(juce::Slider::ColourIds::trackColourId, juce::Colours::black);
+    
+    //modern dial colours
+    setColour (juce::Slider::textBoxTextColourId, CustomColours::creamWhite);
+    setColour (juce::Slider::textBoxOutlineColourId, CustomColours::grey);
+    setColour (juce::Slider::rotarySliderFillColourId, CustomColours::blue);
 }
 

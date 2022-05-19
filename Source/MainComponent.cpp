@@ -5,13 +5,13 @@ MainComponent::MainComponent()
 {
     //Example of Live style dial...examples of changing the colours of certain elements of dial
     gain.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialLiveStyle);
-    gain.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
-    gain.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, juce::Colours::white);
+//    gain.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
+//    gain.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, juce::Colours::white);
     addAndMakeVisible(gain);
 
     //Example of solid coloured dial with a simple tick to define current position
     delay.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialSimpleSolid);
-    delay.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, juce::Colours::darkslategrey);
+//    delay.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, juce::Colours::darkslategrey);
     addAndMakeVisible(delay);
     
     //Example of dial with simple tick to define current position and dots on the outside 

@@ -11,7 +11,7 @@
 #pragma once
 #include <JuceHeader.h>
 
-namespace CustomCOlours
+namespace CustomColours
 {
 
     const juce::Colour blue         = juce::Colour::fromFloatRGBA (0.43f, 0.83f, 1.0f,  1.0f);
