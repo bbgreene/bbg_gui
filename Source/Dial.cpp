@@ -21,7 +21,7 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     // makes the start and end points closer together in terms of range...
     setRotaryParameters(juce::MathConstants<float>::pi * 1.25f, juce::MathConstants<float>::pi * 2.75f, true);
     
-    //Changes aspects of the scaling used when in velocity-sensitive mode.
+    //Changes aspects of the scaling used when in velocity-sensitive mode. setVelocityBasedMode (true) hides mouse when dragging
 //    setVelocityBasedMode (true);
 //    setVelocityModeParameters (1.0, 1, 0.1, false);
     
@@ -36,12 +36,14 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     // how can I continuously send a value to the slider when the textbox value is changed?
     
     // modifies the decimal places of the values displayed in the slider text box.
-    // Using this member function and a lambda function called onValueChange, we set the value in the text box to always display three numbers. currently not set for negative numbers
+    // Using this member function and a lambda function called onValueChange, we set the value in the text box to always display three numbers.
     onValueChange = [&]()
         {
-            if (getValue() < 10)
+            if (getValue() < 10 && getValue() > -10)
                 setNumDecimalPlacesToDisplay (2);
-            else if (10 <= getValue() && getValue() < 100)
+            else if (getValue() >= 10 && getValue() < 100)
+                setNumDecimalPlacesToDisplay (1);
+            else if (getValue() <= -10 && getValue() > -100)
                 setNumDecimalPlacesToDisplay (1);
             else
                 setNumDecimalPlacesToDisplay (0);
