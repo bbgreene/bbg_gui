@@ -3,30 +3,26 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
-    //Example of Live style dial...examples of changing the colours of certain elements of dial
+    // 4 example dials. The colours of each can be edited here to override initProperties() in dial.cpp/h
+    
+    //Example of Live style dial...examples of changing the colours of certain elements of dial.
     gain.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialLiveStyle);
-//    gain.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
-//    gain.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, juce::Colours::white);
     addAndMakeVisible(gain);
 
     //Example of solid coloured dial with a simple tick to define current position
     delay.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialSimpleSolid);
-//    delay.setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::pink);
     addAndMakeVisible(delay);
     
     //Example of dial with simple tick to define current position and dots on the outside 
     balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
-//    balance.setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::pink);
     addAndMakeVisible(balance);
     
+    //Example of modern style dial with text box/label in middle. Customisable colours used to override initProperties() in dial.cpp/h
     depth.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialModernStyle);
-    // CustomColours::creamWhite stick
-    // CustomColours::blackGrey
     depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
     depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
 
-    
     setSize (800, 400);
 }
 
