@@ -17,9 +17,12 @@ MainComponent::MainComponent()
     //Example of dial with simple tick to define current position and dots on the outside 
     balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
     addAndMakeVisible(balance);
+    
+    depth.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialModernStyle);
+    addAndMakeVisible(depth);
 
     
-    setSize (600, 400);
+    setSize (800, 400);
 }
 
 MainComponent::~MainComponent()
@@ -37,7 +40,10 @@ void MainComponent::paint (juce::Graphics& g)
 void MainComponent::resized()
 {
     auto dialSize = 150;
+    
+    
     gain.setBounds(0, getHeight() / 2 - 100, dialSize, dialSize);
-    delay.setBounds(225, getHeight() / 2 - 100, dialSize, dialSize);
-    balance.setBounds(450, getHeight() / 2 -100, dialSize, dialSize);
+    delay.setBounds(gain.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
+    balance.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
+    depth.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
 }

@@ -41,7 +41,8 @@ public:
     {
         kDialLiveStyle,
         kDialSimpleSolid,
-        kDialDotStyle
+        kDialDotStyle,
+        kDialModernStyle
     };
     
     // based on the selection above, each case will call a differenct custom lookAndFeel found in StyleSheet
@@ -64,6 +65,11 @@ public:
                 setLookAndFeel(&dialDotStyleLAF);
                 break;
             }
+            case DialStyle::kDialModernStyle:
+            {
+                setLookAndFeel(&dialModernStyleLAF);
+                break;
+            }
         }
     }
     
@@ -73,6 +79,7 @@ private:
     juce::dialLiveStyle dialLiveStyleLAF;
     juce::dialSimpleSolid dialSimpleSolidLAF;
     juce::dialDotStyle dialDotStyleLAF;
+    juce::dialModernStyle dialModernStyleLAF;
     
     // properties of an individual fader. When a dial is instantiated with variables, these are passed to this function
     void initProperties(juce::String suffix, double rangeStart, double rangeEnd, double intervalValue, double startValue, double returnValue);

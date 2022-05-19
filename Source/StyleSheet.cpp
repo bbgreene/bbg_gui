@@ -12,7 +12,9 @@
 
 namespace  juce
 {
-    void dialLiveStyle::drawRotarySlider (Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
+
+// A Live style dial class
+void dialLiveStyle::drawRotarySlider (Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
 {
     auto outline = slider.findColour (Slider::rotarySliderOutlineColourId);
     auto fill    = slider.findColour (Slider::rotarySliderFillColourId);
@@ -99,34 +101,7 @@ namespace  juce
     g.drawLine(backgroundArc.getBounds().getCentreX(), backgroundArc.getBounds().getCentreY(), thumbPoint.getX(), thumbPoint.getY(), lineW);
 }
 
-// overriding this function to put textbox in centre of slider/dial
-Slider::SliderLayout dialLiveStyle::getSliderLayout(Slider &slider)
-{
-    auto localBounds = slider.getLocalBounds();
-    
-    Slider::SliderLayout layout;
-    
-    layout.textBoxBounds = localBounds.withY (-1);
-    layout.sliderBounds = localBounds;
-    
-    return layout;
-}
-
-//creating a label and params to put in centre
-Label* dialLiveStyle::createSliderTextBox(Slider & slider)
-{
-    auto* l = new Label();
-    
-    l->setJustificationType(Justification::centred);
-    l->setColour(Label::textColourId, slider.findColour(Slider::textBoxTextColourId));
-    l->setColour (Label::textWhenEditingColourId, slider.findColour (juce::Slider::textBoxTextColourId));
-    l->setColour (Label::outlineWhenEditingColourId, juce::Colours::transparentWhite);
-    l->setInterceptsMouseClicks (false, false);
-    l->setFont (18.0f);
-
-    return l;
-}
-
+// A solid dial and tick class
 void juce::dialSimpleSolid::drawRotarySlider (Graphics& g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
 {
     float diameter = fmin(width, height) * .9;
@@ -150,6 +125,7 @@ void juce::dialSimpleSolid::drawRotarySlider (Graphics& g, int x, int y, int wid
     g.fillPath(dialTick, juce::AffineTransform::rotation(angle).translated(centerX, centerY));
 }
 
+// A dial with dots class
 void juce::dialDotStyle::drawRotarySlider
 (Graphics & g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
 {
@@ -270,4 +246,82 @@ void juce::dialDotStyle::drawRotarySlider
     /** Dial tick thickness*/
     g.strokePath (dialTick, juce::PathStrokeType (lineWidth * 0.75, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
 }
+
+
+//A modern dial style
+void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
+{
+    auto fill = slider.findColour (Slider::rotarySliderFillColourId);
+    
+    auto bounds = juce::Rectangle<float> (x, y, width, height).reduced (2.0f);
+    auto radius = juce::jmin (bounds.getWidth(), bounds.getHeight()) / 2.0f;
+    auto toAngle = rotaryStartAngle + sliderPos * (rotaryEndAngle - rotaryStartAngle);
+    auto lineW = radius * 0.085f;
+    auto arcRadius = radius - lineW * 1.6f;
+
+    juce::Path backgroundArc;
+    backgroundArc.addCentredArc (bounds.getCentreX(),
+                                 bounds.getCentreY(),
+                                 arcRadius,
+                                 arcRadius,
+                                 0.0f,
+                                 rotaryStartAngle,
+                                 rotaryEndAngle,
+                                 true);
+
+    g.setColour (CustomColours::blackGrey);
+    g.strokePath (backgroundArc, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
+
+    juce::Path valueArc;
+    valueArc.addCentredArc (bounds.getCentreX(),
+                            bounds.getCentreY(),
+                            arcRadius,
+                            arcRadius,
+                            0.0f,
+                            rotaryStartAngle,
+                            toAngle,
+                            true);
+
+    g.setColour (fill);
+    g.strokePath (valueArc, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
+
+    juce::Path stick;
+    auto stickWidth = lineW * 2.0f;
+
+    stick.addRectangle (-stickWidth / 2, -stickWidth / 2, stickWidth, radius + lineW);
+
+    g.setColour (CustomColours::creamWhite);
+    g.fillPath (stick, juce::AffineTransform::rotation (toAngle + 3.12f).translated (bounds.getCentre()));
+
+    g.fillEllipse (bounds.reduced (radius * 0.25));
+}
+
+// modern dial. overriding this function to put textbox in centre of slider/dial
+Slider::SliderLayout dialModernStyle::getSliderLayout(Slider &slider)
+{
+    auto localBounds = slider.getLocalBounds();
+    
+    Slider::SliderLayout layout;
+    
+    layout.textBoxBounds = localBounds.withY (-1);
+    layout.sliderBounds = localBounds;
+    
+    return layout;
+}
+
+//modern dial. creating a label and params to put in centre
+Label* dialModernStyle::createSliderTextBox(Slider & slider)
+{
+    auto* l = new Label();
+    
+    l->setJustificationType(Justification::centred);
+    l->setColour(Label::textColourId, slider.findColour(Slider::textBoxTextColourId));
+    l->setColour (Label::textWhenEditingColourId, slider.findColour (Slider::textBoxTextColourId));
+    l->setColour (Label::outlineWhenEditingColourId, juce::Colours::transparentWhite);
+    l->setInterceptsMouseClicks (false, false);
+    l->setFont (18.0f);
+
+    return l;
+}
+
 }
