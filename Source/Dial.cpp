@@ -53,7 +53,7 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
 //    setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
 //    setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::orange);
 //    setColour(juce::Slider::ColourIds::trackColourId, juce::Colours::black);
-    
+//
     //modern dial using custom colours
     setColour (juce::Slider::textBoxTextColourId, CustomColours::black);
     setColour (juce::Slider::textBoxOutlineColourId, CustomColours::grey);

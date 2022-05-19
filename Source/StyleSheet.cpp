@@ -252,6 +252,8 @@ void juce::dialDotStyle::drawRotarySlider
 void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
 {
     auto fill = slider.findColour (Slider::rotarySliderFillColourId);
+    auto stickDial = slider.findColour(Slider::thumbColourId);
+    auto backArc = slider.findColour(Slider::rotarySliderOutlineColourId);
     
     auto bounds = juce::Rectangle<float> (x, y, width, height).reduced (2.0f);
     auto radius = juce::jmin (bounds.getWidth(), bounds.getHeight()) / 2.0f;
@@ -269,7 +271,7 @@ void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int wid
                                  rotaryEndAngle,
                                  true);
 
-    g.setColour (CustomColours::blackGrey);
+    g.setColour (backArc);
     g.strokePath (backgroundArc, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
 
     juce::Path valueArc;
@@ -289,8 +291,7 @@ void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int wid
     auto stickWidth = lineW * 2.0f;
 
     stick.addRectangle (-stickWidth / 2, -stickWidth / 2, stickWidth, radius + lineW);
-
-    g.setColour (CustomColours::creamWhite);
+    g.setColour (stickDial);
     g.fillPath (stick, juce::AffineTransform::rotation (toAngle + 3.12f).translated (bounds.getCentre()));
 
     g.fillEllipse (bounds.reduced (radius * 0.25));

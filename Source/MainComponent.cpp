@@ -11,14 +11,19 @@ MainComponent::MainComponent()
 
     //Example of solid coloured dial with a simple tick to define current position
     delay.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialSimpleSolid);
-//    delay.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, juce::Colours::darkslategrey);
+//    delay.setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::pink);
     addAndMakeVisible(delay);
     
     //Example of dial with simple tick to define current position and dots on the outside 
     balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
+//    balance.setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::pink);
     addAndMakeVisible(balance);
     
     depth.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialModernStyle);
+    // CustomColours::creamWhite stick
+    // CustomColours::blackGrey
+    depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
+    depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
 
     
@@ -40,7 +45,6 @@ void MainComponent::paint (juce::Graphics& g)
 void MainComponent::resized()
 {
     auto dialSize = 150;
-    
     
     gain.setBounds(0, getHeight() / 2 - 100, dialSize, dialSize);
     delay.setBounds(gain.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
