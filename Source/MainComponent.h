@@ -2,6 +2,7 @@
 
 #include <JuceHeader.h>
 #include "Dial.h"
+#include "Toggle.h"
 
 //==============================================================================
 /*
@@ -34,6 +35,9 @@ private:
     bbg_gui::bbg_Dial delay { " Samples", 0.0, 50.0, 0.1, 0.0, 0.0};
     bbg_gui::bbg_Dial balance { " Balance", -50.0, 50.0, 0.1, 0.0, 0.0 };
     bbg_gui::bbg_Dial depth { " Depth", 0.0, 10.0, 0.1, 0.0, 0.0 };
+    
+    bbg_gui::bbg_Toggle phase { "Phase" };
+    bbg_gui::bbg_Toggle mute { "Mute" };
     //==============================================================================
     // Your private member variables go here...
 

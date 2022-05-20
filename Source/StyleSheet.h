@@ -59,4 +59,20 @@ public:
     Label* createSliderTextBox (Slider& slider) override;
 };
 
+//Toggle Button One Style
+class toggleButtonOneStyle : public LookAndFeel_V4
+{
+public:
+    
+    void drawToggleButton (Graphics &, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
+};
+
+//Toggle Button Two Style
+class toggleButtonTwoStyle : public LookAndFeel_V4
+{
+public:
+    
+    void drawToggleButton (Graphics &, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
+};
+
 }//my namespace

@@ -22,6 +22,12 @@ MainComponent::MainComponent()
     depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
     depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
+    
+    phase.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kToggleOne);
+    addAndMakeVisible(phase);
+    
+    mute.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kToggleTwo);
+    addAndMakeVisible(mute);
 
     setSize (800, 400);
 }
@@ -41,9 +47,13 @@ void MainComponent::paint (juce::Graphics& g)
 void MainComponent::resized()
 {
     auto dialSize = 150;
+    auto buttonWidth = dialSize * 0.7;
+    auto buttonHeight = buttonWidth * 0.5;
     
     gain.setBounds(0, getHeight() / 2 - 100, dialSize, dialSize);
     delay.setBounds(gain.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
     balance.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
     depth.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
+    phase.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, buttonWidth, buttonHeight);
+    mute.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
 }

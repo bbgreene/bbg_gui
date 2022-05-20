@@ -14,6 +14,8 @@
     <FILE id="faajyv" name="Dial.h" compile="0" resource="0" file="Source/Dial.h"/>
     <FILE id="yINnAy" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>
     <FILE id="izPSPH" name="StyleSheet.h" compile="0" resource="0" file="Source/StyleSheet.h"/>
+    <FILE id="B70wcD" name="Toggle.cpp" compile="1" resource="0" file="Source/Toggle.cpp"/>
+    <FILE id="rP4TJq" name="Toggle.h" compile="0" resource="0" file="Source/Toggle.h"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
   <EXPORTFORMATS>

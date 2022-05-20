@@ -325,4 +325,52 @@ Label* dialModernStyle::createSliderTextBox(Slider & slider)
     return l;
 }
 
+//Toggle Button One Style
+void juce::toggleButtonOneStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
+{
+        Path button;
+                
+        auto bounds = toggleButton.getLocalBounds();
+                
+        auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
+        auto sr = bounds.withSizeKeepingCentre(size / 2.5, size / 2.5).toFloat();
+        
+        button.addEllipse(sr);
+        
+        button.startNewSubPath(sr.getX(), sr.getY() + sr.getHeight());
+        button.lineTo(sr.getX() + sr.getWidth(), sr.getY());
+                
+        PathStrokeType pst(2.0f, PathStrokeType::JointStyle::curved);
+                
+        auto color =
+        toggleButton.getToggleState() ? toggleButton.findColour(juce::ToggleButton::tickColourId) : toggleButton.findColour(juce::ToggleButton::tickDisabledColourId);
+                
+        g.setColour(color);
+        g.strokePath(button, pst);
+}
+
+//Toggle Button Two Style
+void juce::toggleButtonTwoStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
+{
+        Path button;
+                
+        auto bounds = toggleButton.getLocalBounds();
+                
+        auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
+        auto sr = bounds.withSizeKeepingCentre(size / 2.5, size / 2.5).toFloat();
+        
+        button.addEllipse(sr);
+        
+        button.startNewSubPath(sr.getX(), sr.getY() + sr.getHeight());
+        button.lineTo(sr.getX() + sr.getWidth(), sr.getY());
+                
+        PathStrokeType pst(2.0f, PathStrokeType::JointStyle::curved);
+                
+        auto color =
+        toggleButton.getToggleState() ? toggleButton.findColour(juce::ToggleButton::tickColourId) : toggleButton.findColour(juce::ToggleButton::tickDisabledColourId);
+                
+        g.setColour(color);
+        g.strokePath(button, pst);
+}
+
 }
