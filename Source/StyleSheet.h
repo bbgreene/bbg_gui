@@ -59,7 +59,7 @@ public:
     Label* createSliderTextBox (Slider& slider) override;
 };
 
-//Toggle Button One Style
+//Phase Button Style
 class phaseToggleStyle : public LookAndFeel_V4
 {
 public:
@@ -67,7 +67,7 @@ public:
     void drawToggleButton (Graphics & g, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
 };
 
-//Toggle Button Two Style
+//Power Button Style
 class powerToggleStyle : public LookAndFeel_V4
 {
 public:

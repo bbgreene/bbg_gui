@@ -325,7 +325,7 @@ Label* dialModernStyle::createSliderTextBox(Slider & slider)
     return l;
 }
 
-//Toggle Button One Style
+//Phase Button Style
 void juce::phaseToggleStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
 {
     Path button;
@@ -349,7 +349,7 @@ void juce::phaseToggleStyle::drawToggleButton(Graphics & g, ToggleButton & toggl
     g.strokePath(button, pst);
 }
 
-//Toggle Button Two Style
+//Power Button Style
 void juce::powerToggleStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
 {
     Path button;
