@@ -16,8 +16,7 @@ void bbg_gui::bbg_Toggle::initProperties(juce::String labelText)
     setClickingTogglesState(true);
     setLookAndFeel(&phaseToggleStyleLAF);
     
+    setColour(juce::ToggleButton::tickDisabledColourId, juce::Colours::dimgrey.withAlpha(0.5f));
+    setColour(juce::ToggleButton::tickColourId, juce::Colours::springgreen.withAlpha(0.5f));
     setColour(juce::TextButton::ColourIds::buttonOnColourId, juce::Colours::lightgoldenrodyellow);
-    setColour(juce::TextButton::ColourIds::buttonColourId, juce::Colours::dimgrey);
-    setColour(juce::TextButton::ColourIds::textColourOffId, juce::Colours::black);
-    setColour(juce::TextButton::ColourIds::textColourOnId, juce::Colours::black);
 }

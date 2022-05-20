@@ -25,12 +25,10 @@ MainComponent::MainComponent()
     
     // 2 example buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h
     
-    //Example of toggle number one with text in middle. Customisable colours used to override initProperties() in Toggle.cpp/h
+    //Example of phase button. Customisable colours used to override initProperties() in Toggle.cpp/h
     phase.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPhaseToggle);
-//    phase.setColour(juce::TextButton::ColourIds::buttonColourId, CustomColours::blackGrey);
-//    phase.setColour(juce::TextButton::ColourIds::buttonOnColourId, CustomColours::creamWhite);
-//    phase.setColour(juce::TextButton::ColourIds::textColourOnId, CustomColours::blackGrey);
-//    phase.setColour(juce::TextButton::ColourIds::textColourOffId, CustomColours::creamWhite);
+    phase.setColour(juce::ToggleButton::ColourIds::tickDisabledColourId, CustomColours::blackGrey);
+    phase.setColour(juce::ToggleButton::ColourIds::tickColourId, CustomColours::green);
     addAndMakeVisible(phase);
     
     //Example of toggle number two with text in middle.
