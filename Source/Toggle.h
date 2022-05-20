@@ -17,7 +17,7 @@
 namespace bbg_gui
 {
 
-class bbg_Toggle : public juce::TextButton
+class bbg_Toggle : public juce::ToggleButton
 {
 public:
     bbg_Toggle (juce::String labelText)
@@ -33,22 +33,22 @@ public:
     
     enum class ToggleStyle
     {
-      kToggleOne,
-        kToggleTwo
+      kPhaseToggle,
+        kPowerToggle
     };
     
     void setToggleStyle (ToggleStyle toggleStyle)
     {
         switch (toggleStyle)
         {
-            case ToggleStyle::kToggleOne:
+            case ToggleStyle::kPhaseToggle:
             {
-                setLookAndFeel(&toggleOneStyleLAF);
+                setLookAndFeel(&phaseToggleStyleLAF);
                 break;
             }
-            case ToggleStyle::kToggleTwo:
+            case ToggleStyle::kPowerToggle:
             {
-                setLookAndFeel(&toggleTwoStyleLAF);
+                setLookAndFeel(&powerToggleStyleLAF);
                 break;
             }
         }
@@ -57,9 +57,10 @@ public:
     private:
     
         // Instantance of custom lookAndFeel from StyleSheet
-        juce::toggleButtonOneStyle toggleOneStyleLAF;
-        juce::toggleButtonTwoStyle toggleTwoStyleLAF;
+        juce::phaseToggleStyle phaseToggleStyleLAF;
+        juce::powerToggleStyle powerToggleStyleLAF;
     
+    // properties of an individual button. When a button is instantiated with variables, these are passed to this function
         void initProperties(juce::String labelText);
     
 };

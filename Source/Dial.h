@@ -81,7 +81,7 @@ private:
     juce::dialDotStyle dialDotStyleLAF;
     juce::dialModernStyle dialModernStyleLAF;
     
-    // properties of an individual fader. When a dial is instantiated with variables, these are passed to this function
+    // properties of an individual dial. When a dial is instantiated with variables, these are passed to this function
     void initProperties(juce::String suffix, double rangeStart, double rangeEnd, double intervalValue, double startValue, double returnValue);
     
 };

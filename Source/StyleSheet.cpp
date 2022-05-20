@@ -326,51 +326,63 @@ Label* dialModernStyle::createSliderTextBox(Slider & slider)
 }
 
 //Toggle Button One Style
-void juce::toggleButtonOneStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
+void juce::phaseToggleStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
 {
-        Path button;
-                
-        auto bounds = toggleButton.getLocalBounds();
-                
-        auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
-        auto sr = bounds.withSizeKeepingCentre(size / 2.5, size / 2.5).toFloat();
-        
-        button.addEllipse(sr);
-        
-        button.startNewSubPath(sr.getX(), sr.getY() + sr.getHeight());
-        button.lineTo(sr.getX() + sr.getWidth(), sr.getY());
-                
-        PathStrokeType pst(2.0f, PathStrokeType::JointStyle::curved);
-                
-        auto color =
-        toggleButton.getToggleState() ? toggleButton.findColour(juce::ToggleButton::tickColourId) : toggleButton.findColour(juce::ToggleButton::tickDisabledColourId);
-                
-        g.setColour(color);
-        g.strokePath(button, pst);
+    Path button;
+            
+    auto bounds = toggleButton.getLocalBounds();
+            
+    auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
+    auto sr = bounds.withSizeKeepingCentre(size / 2.5, size / 2.5).toFloat();
+
+    button.addEllipse(sr);
+
+    button.startNewSubPath(sr.getX(), sr.getY() + sr.getHeight());
+    button.lineTo(sr.getX() + sr.getWidth(), sr.getY());
+            
+    PathStrokeType pst(2.0f, PathStrokeType::JointStyle::curved);
+            
+    auto color =
+    toggleButton.getToggleState() ? toggleButton.findColour(juce::ToggleButton::tickColourId) : toggleButton.findColour(juce::ToggleButton::tickDisabledColourId);
+            
+    g.setColour(color);
+    g.strokePath(button, pst);
 }
 
 //Toggle Button Two Style
-void juce::toggleButtonTwoStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
+void juce::powerToggleStyle::drawToggleButton(Graphics & g, ToggleButton & toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
 {
-        Path button;
-                
-        auto bounds = toggleButton.getLocalBounds();
-                
-        auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
-        auto sr = bounds.withSizeKeepingCentre(size / 2.5, size / 2.5).toFloat();
-        
-        button.addEllipse(sr);
-        
-        button.startNewSubPath(sr.getX(), sr.getY() + sr.getHeight());
-        button.lineTo(sr.getX() + sr.getWidth(), sr.getY());
-                
-        PathStrokeType pst(2.0f, PathStrokeType::JointStyle::curved);
-                
-        auto color =
-        toggleButton.getToggleState() ? toggleButton.findColour(juce::ToggleButton::tickColourId) : toggleButton.findColour(juce::ToggleButton::tickDisabledColourId);
-                
-        g.setColour(color);
-        g.strokePath(button, pst);
+    Path button;
+           
+    auto bounds = toggleButton.getLocalBounds();
+           
+    auto size = jmin(bounds.getWidth(), bounds.getHeight()) - 6;
+    auto r = bounds.withSizeKeepingCentre(size, size).toFloat();
+           
+    float ang = 30.f;
+           
+    size -= 9;
+
+
+    button.addCentredArc(r.getCentreX(),
+                               r.getCentreY(),
+                               size * 0.25,
+                               size * 0.25,
+                               0.f,
+                               degreesToRadians(ang),
+                               degreesToRadians(360.f - ang),
+                               true);
+           
+    button.startNewSubPath(r.getCentreX(), r.getY() + r.getHeight() * 0.21);
+    button.lineTo(r.getCentre());
+           
+    PathStrokeType pst(2.0f, PathStrokeType::JointStyle::curved);
+           
+    auto color =
+    toggleButton.getToggleState() ? toggleButton.findColour(juce::ToggleButton::tickColourId) : toggleButton.findColour(juce::ToggleButton::tickDisabledColourId);
+
+    g.setColour(color);
+    g.strokePath(button, pst);
 }
 
 }

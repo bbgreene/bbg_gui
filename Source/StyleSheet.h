@@ -60,19 +60,19 @@ public:
 };
 
 //Toggle Button One Style
-class toggleButtonOneStyle : public LookAndFeel_V4
+class phaseToggleStyle : public LookAndFeel_V4
 {
 public:
     
-    void drawToggleButton (Graphics &, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
+    void drawToggleButton (Graphics & g, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
 };
 
 //Toggle Button Two Style
-class toggleButtonTwoStyle : public LookAndFeel_V4
+class powerToggleStyle : public LookAndFeel_V4
 {
 public:
     
-    void drawToggleButton (Graphics &, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
+    void drawToggleButton (Graphics & g, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
 };
 
 }//my namespace
