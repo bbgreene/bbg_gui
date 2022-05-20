@@ -23,18 +23,21 @@ MainComponent::MainComponent()
     depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
     
-    // 2 example buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h
+    // 3 example buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h or PushButton.cpp/h
     
-    //Example of phase button. Customisable colours used to override initProperties() in Toggle.cpp/h
+    //Example of phase button(utilising juce::toggleButton). Customisable colours used to override initProperties() in Toggle.cpp/h
     phase.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPhaseToggle);
     phase.setColour(juce::ToggleButton::ColourIds::tickDisabledColourId, CustomColours::blackGrey);
     phase.setColour(juce::ToggleButton::ColourIds::tickColourId, CustomColours::green);
     addAndMakeVisible(phase);
     
-    //Example of toggle number two with text in middle.
-    mute.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPowerToggle);
-    addAndMakeVisible(mute);
+    //Example of power button with text in middle (utilising juce::toggleButton).
+    power.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPowerToggle);
+    addAndMakeVisible(power);
 
+    //Example of Push Button (utilising juce::textButton)
+    addAndMakeVisible(mute);
+    
     setSize (800, 400);
 }
 
@@ -61,5 +64,6 @@ void MainComponent::resized()
     balance.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
     depth.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
     phase.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, buttonWidth, buttonHeight);
-    mute.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
+    power.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
+    mute.setBounds(power.getX(), power.getY() + 75, buttonWidth, buttonHeight);
 }

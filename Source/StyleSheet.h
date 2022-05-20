@@ -75,4 +75,13 @@ public:
     void drawToggleButton (Graphics & g, ToggleButton& toggleButton, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
 };
 
+//Push Button from juce::TextButton
+class PushButtonStyle : public LookAndFeel_V4
+{
+public:
+    
+    void drawButtonText (Graphics& g, TextButton& button, bool, bool) override;
+    
+};
+
 }//my namespace
