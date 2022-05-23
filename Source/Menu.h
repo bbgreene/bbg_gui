@@ -16,7 +16,7 @@
 namespace bbg_gui
 {
 
-class bbg_Menu : public juce::ComboBox
+class bbg_Menu : public juce::ComboBox, private juce::Timer
 {
 public:
     bbg_Menu()
@@ -32,9 +32,11 @@ public:
 private:
     juce::ComboBoxOneStyle ComboBoxOneLAF;
     
+    void timerCallback() final;
+    void mouseEnter (const juce::MouseEvent& event) override;
+    void mouseExit (const juce::MouseEvent& event) override;
+    
     void initProperties();
 };
-
-
 
 }
