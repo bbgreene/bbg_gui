@@ -31,7 +31,7 @@ MainComponent::MainComponent()
     //Example of phase button(utilising juce::toggleButton). Customisable colours used to override initProperties() in Toggle.cpp/h
     phase.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPhaseToggle);
     phase.setColour(juce::ToggleButton::ColourIds::tickDisabledColourId, CustomColours::blackGrey);
-    phase.setColour(juce::ToggleButton::ColourIds::tickColourId, CustomColours::green);
+    phase.setColour(juce::ToggleButton::ColourIds::tickColourId, CustomColours::blue);
     addAndMakeVisible(phase);
     
     //Example of power button with text in middle (utilising juce::toggleButton).
