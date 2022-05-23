@@ -3,6 +3,9 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
+    // set default font
+    juce::LookAndFeel::getDefaultLookAndFeel().setDefaultSansSerifTypefaceName ("Avenir Next");
+
     // 4 example dials. The colours of each can be edited here to override initProperties() in Dial.cpp/h
     
     //Example of Live style dial...examples of changing the colours of certain elements of dial.

@@ -389,7 +389,7 @@ void juce::powerToggleStyle::drawToggleButton(Graphics & g, ToggleButton & toggl
 void juce::PushButtonStyle::drawButtonText (Graphics& g, TextButton& button,
                      bool /*shouldDrawButtonAsHighlighted*/, bool /*shouldDrawButtonAsDown*/)
 {
-    Font font (juce::Font ("Arial", 16.0f, juce::Font::FontStyleFlags::plain));
+    Font font (juce::Font (16.0f, juce::Font::FontStyleFlags::plain));
     g.setFont (font);
     g.setColour (button.findColour (button.getToggleState() ? TextButton::textColourOnId
                                                             : TextButton::textColourOffId)
