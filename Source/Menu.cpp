@@ -30,17 +30,17 @@ void bbg_gui::bbg_Menu::initProperties()
 
 void bbg_gui::bbg_Menu::timerCallback()
 {
-//    setColour(juce::ComboBox::ColourIds::backgroundColourId, juce::Colours::black.brighter(0.1));
+    setColour(juce::ComboBox::ColourIds::backgroundColourId, CustomColours::creamWhite);
 }
 
 void bbg_gui::bbg_Menu::mouseEnter(const juce::MouseEvent &event)
 {
-//    setColour(juce::ComboBox::ColourIds::backgroundColourId, juce::Colours::black.brighter(0.12));
-    startTimer(1000);;
+    setColour(juce::ComboBox::ColourIds::backgroundColourId, CustomColours::offCreamWhite);
+    startTimer(100);;
 }
 
 void bbg_gui::bbg_Menu::mouseExit(const juce::MouseEvent &event)
 {
-//    setColour(juce::ComboBox::ColourIds::backgroundColourId, juce::Colours::black.brighter(0.1));
+    setColour(juce::ComboBox::ColourIds::backgroundColourId, CustomColours::creamWhite);
     stopTimer();
 }
