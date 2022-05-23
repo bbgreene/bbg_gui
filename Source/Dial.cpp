@@ -39,7 +39,9 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     // Using this member function and a lambda function called onValueChange, we set the value in the text box to always display three numbers.
     onValueChange = [&]()
         {
-            if (getValue() < 10 && getValue() > -10)
+            if (getValue() == 0.0)
+                setNumDecimalPlacesToDisplay(1);
+            else if (getValue() < 10 && getValue() > -10)
                 setNumDecimalPlacesToDisplay (2);
             else if (getValue() >= 10 && getValue() < 100)
                 setNumDecimalPlacesToDisplay (1);
