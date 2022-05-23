@@ -38,8 +38,11 @@ MainComponent::MainComponent()
     //Example of Push Button (utilising juce::textButton)
     addAndMakeVisible(mute);
     
-    juce::StringArray boxList = { "Item One", "Item Two", "Item Three" };
-    box.addItemList(boxList, 1);
+    //Example of ComboBox Menu (utilising juce::textButton)
+    box.setText("Waveform");
+    box.addItem("Sine", 1);
+    box.addItem("Triangle", 2);
+    box.addItem("Square", 3);
     addAndMakeVisible(box);
     
     setSize (800, 400);

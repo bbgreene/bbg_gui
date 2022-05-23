@@ -25,7 +25,7 @@ public:
         initProperties(labelText);
     }
     
-    ~bbg_PushButton()
+    ~bbg_PushButton() override
     {
         setLookAndFeel(nullptr);
     }
