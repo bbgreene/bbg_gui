@@ -38,6 +38,10 @@ MainComponent::MainComponent()
     //Example of Push Button (utilising juce::textButton)
     addAndMakeVisible(mute);
     
+    juce::StringArray boxList = { "Item One", "Item Two", "Item Three" };
+    box.addItemList(boxList, 1);
+    addAndMakeVisible(box);
+    
     setSize (800, 400);
 }
 
@@ -66,4 +70,5 @@ void MainComponent::resized()
     phase.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, buttonWidth, buttonHeight);
     power.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
     mute.setBounds(power.getX(), power.getY() + 75, buttonWidth, buttonHeight);
+    box.setBounds(mute.getX(), mute.getY() + 75, buttonWidth, buttonHeight);
 }

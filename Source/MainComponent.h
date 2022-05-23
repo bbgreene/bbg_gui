@@ -4,6 +4,7 @@
 #include "Dial.h"
 #include "Toggle.h"
 #include "PushButton.h"
+#include "Menu.h"
 
 //==============================================================================
 /*
@@ -41,6 +42,8 @@ private:
     bbg_gui::bbg_Toggle power { "Power" };
     
     bbg_gui::bbg_PushButton mute { "Mute" };
+    
+    bbg_gui::bbg_Menu box;
     //==============================================================================
     // Your private member variables go here...
 

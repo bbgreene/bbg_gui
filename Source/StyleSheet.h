@@ -84,4 +84,12 @@ public:
     
 };
 
+//ComboBox One Style
+class ComboBoxOneStyle : public LookAndFeel_V4
+{
+public:
+    
+    void drawComboBox (Graphics& g, int width, int height, bool, int, int, int, int, ComboBox& box);
+};
+
 }//my namespace
