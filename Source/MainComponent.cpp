@@ -48,7 +48,7 @@ MainComponent::MainComponent()
     box.addItem("Square", 3);
     addAndMakeVisible(box);
     
-    setSize (800, 400);
+    setSize (1000, 400);
 }
 
 MainComponent::~MainComponent()
@@ -65,7 +65,7 @@ void MainComponent::paint (juce::Graphics& g)
 
 void MainComponent::resized()
 {
-    auto dialSize = 150;
+    auto dialSize = 200;
     auto buttonWidth = dialSize * 0.7;
     auto buttonHeight = buttonWidth * 0.5;
     
