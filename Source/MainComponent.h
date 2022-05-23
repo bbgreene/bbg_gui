@@ -38,11 +38,14 @@ private:
     bbg_gui::bbg_Dial balance { " Balance", -50.0, 50.0, 0.1, 0.0, 0.0 };
     bbg_gui::bbg_Dial depth { " Depth", 0.0, 10.0, 0.1, 0.0, 0.0 };
     
+    //Creating Toggle buttons
     bbg_gui::bbg_Toggle phase { "Phase" };
     bbg_gui::bbg_Toggle power { "Power" };
     
+    //Creating a simple push button
     bbg_gui::bbg_PushButton mute { "Mute" };
     
+    //Creating a simple drop down combobox menu
     bbg_gui::bbg_Menu box;
     //==============================================================================
     // Your private member variables go here...
