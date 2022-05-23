@@ -247,6 +247,33 @@ void juce::dialDotStyle::drawRotarySlider
     g.strokePath (dialTick, juce::PathStrokeType (lineWidth * 0.75, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
 }
 
+// dot dial. overriding this function to put textbox in centre of slider/dial
+Slider::SliderLayout dialDotStyle::getSliderLayout(Slider &slider)
+{
+    auto localBounds = slider.getLocalBounds();
+    
+    Slider::SliderLayout layout;
+    
+    layout.textBoxBounds = localBounds.withY (-1);
+    layout.sliderBounds = localBounds;
+    
+    return layout;
+}
+
+//dot dial. creating a label and params to put in centre
+Label* dialDotStyle::createSliderTextBox(Slider & slider)
+{
+    auto* l = new Label();
+    
+    l->setJustificationType(Justification::centred);
+    l->setColour(Label::textColourId, slider.findColour(Slider::textBoxTextColourId));
+    l->setColour (Label::textWhenEditingColourId, slider.findColour (Slider::textBoxTextColourId));
+    l->setColour (Label::outlineWhenEditingColourId, juce::Colours::transparentWhite);
+    l->setInterceptsMouseClicks (false, false);
+    l->setFont (18.0f);
+
+    return l;
+}
 
 //A modern dial style
 void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)

@@ -40,8 +40,13 @@ class dialDotStyle : public LookAndFeel_V4
 {
     
 public:
+    // overriding this function to put textbox in centre of slider/dial
+    Slider::SliderLayout getSliderLayout (Slider& slider) override;
     
     void drawRotarySlider (Graphics &, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider &) override;
+    
+    //creating a label and params to put in centre
+    Label* createSliderTextBox (Slider& slider) override;
 };
 
 //A modern dial style
