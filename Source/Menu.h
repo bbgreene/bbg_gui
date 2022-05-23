@@ -24,8 +24,9 @@ public:
         initProperties();
     }
     
-    ~bbg_Menu() override
+    ~bbg_Menu()
     {
+        hidePopup();
         setLookAndFeel(nullptr);
     }
     
