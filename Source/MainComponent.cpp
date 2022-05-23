@@ -70,7 +70,7 @@ void MainComponent::resized()
     delay.setBounds(gain.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
     balance.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
     depth.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
-    phase.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, buttonWidth, buttonHeight);
+    phase.setBounds(depth.getX() + dialSize + 25, getHeight() / 2 - 200, buttonWidth, buttonHeight);
     power.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
     mute.setBounds(power.getX(), power.getY() + 75, buttonWidth, buttonHeight);
     box.setBounds(mute.getX(), mute.getY() + 75, buttonWidth, buttonHeight);
