@@ -428,7 +428,7 @@ void juce::ComboBoxOneStyle::drawComboBox(Graphics &g, int width, int height, bo
        path.lineTo ((float) arrowZone.getRight() - 3.0f, (float) arrowZone.getCentreY() - 2.0f);
 
        g.setColour (box.findColour (ComboBox::arrowColourId));
-       g.strokePath (path, PathStrokeType (4.0f));
+       g.strokePath (path, PathStrokeType (2.0f));
 }
 
 }
