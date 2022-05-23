@@ -26,6 +26,12 @@ MainComponent::MainComponent()
     depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
     
+    //Example of modern style dial with dots and text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
+    freq.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotModernStyle);
+    freq.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
+    freq.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
+    addAndMakeVisible(freq);
+    
     // 3 example buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h or PushButton.cpp/h
     
     //Example of phase button(utilising juce::toggleButton). Customisable colours used to override initProperties() in Toggle.cpp/h
@@ -48,7 +54,7 @@ MainComponent::MainComponent()
     box.addItem("Square", 3);
     addAndMakeVisible(box);
     
-    setSize (1000, 400);
+    setSize (1200, 400);
 }
 
 MainComponent::~MainComponent()
@@ -73,7 +79,8 @@ void MainComponent::resized()
     delay.setBounds(gain.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
     balance.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
     depth.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
-    phase.setBounds(depth.getX() + dialSize + 25, getHeight() / 2 - 200, buttonWidth, buttonHeight);
+    freq.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
+    phase.setBounds(freq.getX() + dialSize + 25, getHeight() / 2 - 200, buttonWidth, buttonHeight);
     power.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
     mute.setBounds(power.getX(), power.getY() + 75, buttonWidth, buttonHeight);
     box.setBounds(mute.getX(), mute.getY() + 75, buttonWidth, buttonHeight);

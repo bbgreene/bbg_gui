@@ -37,6 +37,7 @@ private:
     bbg_gui::bbg_Dial delay { " Samples", 0.0, 50.0, 0.1, 0.0, 0.0};
     bbg_gui::bbg_Dial balance { " Balance", -50.0, 50.0, 0.1, 0.0, 0.0 };
     bbg_gui::bbg_Dial depth { " Depth", 0.0, 10.0, 0.1, 0.0, 0.0 };
+    bbg_gui::bbg_Dial freq { " Frequency", 0.0, 500.0, 0.1, 0.0, 0.0};
     
     //Creating Toggle buttons
     bbg_gui::bbg_Toggle phase { "Phase" };
