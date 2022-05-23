@@ -435,7 +435,7 @@ void juce::dialDotModernStyle::drawRotarySlider(Graphics & g, int x, int y, int 
     g.strokePath (dialValueTrack, juce::PathStrokeType (lineWidth, juce::PathStrokeType::curved, juce::PathStrokeType::rounded));
     
     /** Dial tick color*/
-    g.setColour (CustomColours::creamWhite);
+    g.setColour (trackColor);
     juce::Path dialTick;
     dialTick.startNewSubPath (centre.getPointOnCircumference (dialRadius - lineWidth, toAngle));
     
