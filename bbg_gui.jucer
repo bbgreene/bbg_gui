@@ -9,6 +9,8 @@
       <FILE id="LjQbtr" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
     </GROUP>
+    <FILE id="kpXjAb" name="Label.cpp" compile="1" resource="0" file="Source/Label.cpp"/>
+    <FILE id="xr32C4" name="Label.h" compile="0" resource="0" file="Source/Label.h"/>
     <FILE id="ZU4pWZ" name="CustomColours.h" compile="0" resource="0" file="Source/CustomColours.h"/>
     <FILE id="Cphv8B" name="Dial.cpp" compile="1" resource="0" file="Source/Dial.cpp"/>
     <FILE id="faajyv" name="Dial.h" compile="0" resource="0" file="Source/Dial.h"/>

@@ -5,6 +5,7 @@
 #include "Toggle.h"
 #include "PushButton.h"
 #include "Menu.h"
+#include "Label.h"
 
 //==============================================================================
 /*
@@ -34,10 +35,15 @@ private:
 //        * 0.0 is the number the dial is reset to when double clicked
     
     bbg_gui::bbg_Dial gain { " dB", -24.0, 24.0, 0.1, 0.0, 0.0 };
-    bbg_gui::bbg_Dial delay { " Samples", 0.0, 50.0, 0.1, 0.0, 0.0};
-    bbg_gui::bbg_Dial balance { " Balance", -50.0, 50.0, 0.1, 0.0, 0.0 };
-    bbg_gui::bbg_Dial depth { " Depth", 0.0, 10.0, 0.1, 0.0, 0.0 };
-    bbg_gui::bbg_Dial freq { " Frequency", 0.0, 500.0, 0.1, 0.0, 0.0};
+    bbg_gui::bbg_Dial delay { " Smp", 0.0, 50.0, 0.1, 0.0, 0.0};
+    bbg_gui::bbg_Dial balance { " Pan", -50.0, 50.0, 0.1, 0.0, 0.0 };
+    bbg_gui::bbg_Dial depth { " %", 0.0, 10.0, 0.1, 0.0, 0.0 };
+    bbg_gui::bbg_Dial freq { " Hz", 0.0, 500.0, 0.1, 0.0, 0.0};
+    
+    //Creating labels for dials
+    bbg_gui::bbg_Label depthLabel { "DEPTH" };
+    bbg_gui::bbg_Label freqLabel { "FREQ" };
+    bbg_gui::bbg_Label phaseLabel { "PHASE" };
     
     //Creating Toggle buttons
     bbg_gui::bbg_Toggle phase { "Phase" };

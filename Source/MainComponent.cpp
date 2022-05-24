@@ -26,6 +26,10 @@ MainComponent::MainComponent()
     depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
     
+    //Attaching labels to dials. Customisable colours used to override initProperties() in Label.cpp/h
+    depthLabel.attachToComponent(&depth, false);
+    freqLabel.attachToComponent(&freq, false);
+    
     //Example of modern style dial with dots and text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
     freq.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotModernStyle);
     freq.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
@@ -39,6 +43,8 @@ MainComponent::MainComponent()
     phase.setColour(juce::ToggleButton::ColourIds::tickDisabledColourId, CustomColours::blackGrey);
     phase.setColour(juce::ToggleButton::ColourIds::tickColourId, CustomColours::blue);
     addAndMakeVisible(phase);
+    
+    phaseLabel.attachToComponent(&phase, false);
     
     //Example of power button with text in middle (utilising juce::toggleButton).
     power.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPowerToggle);
