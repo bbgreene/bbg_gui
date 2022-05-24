@@ -41,10 +41,10 @@ private:
     bbg_gui::bbg_Dial freq { " Hz", 0.0, 500.0, 0.1, 0.0, 0.0};
     
     //Creating labels for dials
-    bbg_gui::bbg_Label depthLabel { "DEPTH" };
-    bbg_gui::bbg_Label freqLabel { "FREQ" };
-    bbg_gui::bbg_Label phaseLabel { "PHASE" };
-    bbg_gui::bbg_Label powerLabel { "POWER" };
+    bbg_gui::bbg_dialLabel depthLabel { "DEPTH" };
+    bbg_gui::bbg_dialLabel freqLabel { "FREQ" };
+    bbg_gui::bbg_toggleLabel phaseLabel { "PHASE" };
+    bbg_gui::bbg_toggleLabel powerLabel { "POWER" };
     
     //Creating Toggle buttons
     bbg_gui::bbg_Toggle phase { "Phase" };

@@ -324,7 +324,6 @@ Label* dialModernStyle::createSliderTextBox(Slider & slider)
     return l;
 }
 
-
 //A modern dial style with dots
 void juce::dialDotModernStyle::drawRotarySlider(Graphics & g, int x, int y, int width, int height, float sliderPos, float rotaryStartAngle, float rotaryEndAngle, Slider & slider)
 {

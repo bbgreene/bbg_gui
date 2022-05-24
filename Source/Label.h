@@ -15,20 +15,20 @@
 
 namespace bbg_gui
 {
-
-class bbg_Label : public juce::Label
+//dialLabel class
+class bbg_dialLabel : public juce::Label
 {
 public:
-    bbg_Label(juce::String labelText)
+    bbg_dialLabel(juce::String labelText)
     {
         initProperties(labelText);
     }
     
-    ~bbg_Label() override
+    ~bbg_dialLabel() override
     {
         
     }
-
+    
 private:
     
     void initProperties(juce::String labelText);
@@ -36,5 +36,26 @@ private:
     
 };
 
+//toggleLabel class
+
+class bbg_toggleLabel : public juce::Label
+{
+public:
+    bbg_toggleLabel(juce::String labelText)
+    {
+        initProperties(labelText);
+    }
+    
+    ~bbg_toggleLabel() override
+    {
+        
+    }
+    
+private:
+    
+    void initProperties(juce::String labelText);
+    void componentMovedOrResized(Component& component, bool /*wasMoved*/, bool /*wasResized*/) override;
+    
+};
 
 }
