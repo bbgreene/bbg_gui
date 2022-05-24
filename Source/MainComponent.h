@@ -43,12 +43,14 @@ private:
     //Creating labels for dials
     bbg_gui::bbg_dialLabel depthLabel { "DEPTH" };
     bbg_gui::bbg_dialLabel freqLabel { "FREQ" };
-    bbg_gui::bbg_toggleLabel phaseLabel { "PHASE" };
-    bbg_gui::bbg_toggleLabel powerLabel { "POWER" };
     
     //Creating Toggle buttons
     bbg_gui::bbg_Toggle phase { "Phase" };
     bbg_gui::bbg_Toggle power { "Power" };
+    
+    //Creating labels for toggles
+    bbg_gui::bbg_toggleLabel phaseLabel { "PHASE" };
+    bbg_gui::bbg_toggleLabel powerLabel { "POWER" };
     
     //Creating a simple push button
     bbg_gui::bbg_PushButton mute { "MUTE" };

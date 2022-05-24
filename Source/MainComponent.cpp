@@ -6,7 +6,7 @@ MainComponent::MainComponent()
     // set default font
     juce::LookAndFeel::getDefaultLookAndFeel().setDefaultSansSerifTypefaceName ("Avenir Next");
 
-    // 4 example dials. The colours of each can be edited here to override initProperties() in Dial.cpp/h
+        //*** 5 example dials. The colours of each can be edited here to override initProperties() in Dial.cpp/h
     
     //Example of Live style dial...examples of changing the colours of certain elements of dial.
     gain.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialLiveStyle);
@@ -26,17 +26,17 @@ MainComponent::MainComponent()
     depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
     
-    //Attaching labels to dials. Customisable colours used to override initProperties() in Label.cpp/h
-    depthLabel.attachToComponent(&depth, false);
-    freqLabel.attachToComponent(&freq, false);
-    
     //Example of modern style dial with dots and text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
     freq.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotModernStyle);
     freq.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
     freq.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(freq);
     
-    // 3 example buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h or PushButton.cpp/h
+    //Attaching labels to dials. Customisable colours used to override initProperties() in Label.cpp/h
+    depthLabel.attachToComponent(&depth, false);
+    freqLabel.attachToComponent(&freq, false);
+    
+        //*** 2 example of toggle buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h
     
     //Example of phase button(utilising juce::toggleButton). Customisable colours used to override initProperties() in Toggle.cpp/h
     phase.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPhaseToggle);
@@ -44,15 +44,20 @@ MainComponent::MainComponent()
     phase.setColour(juce::ToggleButton::ColourIds::tickColourId, CustomColours::blue);
     addAndMakeVisible(phase);
     
-    phaseLabel.attachToComponent(&phase, false);
-    powerLabel.attachToComponent(&power, false);
-    
     //Example of power button with text in middle (utilising juce::toggleButton).
     power.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPowerToggle);
     addAndMakeVisible(power);
+    
+    //Attaching labels to toggles. Customisable colours used to override initProperties() in Label.cpp/h
+    phaseLabel.attachToComponent(&phase, false);
+    powerLabel.attachToComponent(&power, false);
 
+        //*** 1 example a push button. The colours can be edited here to override initProperties() in PushButton.cpp/h
+    
     //Example of Push Button (utilising juce::textButton)
     addAndMakeVisible(mute);
+    
+        //*** 1 example a Menu. The colours can be edited here to override initProperties() in Menu.cpp/h
     
     //Example of ComboBox Menu (utilising juce::textButton)
     box.setText("Waveform");
