@@ -45,6 +45,7 @@ MainComponent::MainComponent()
     addAndMakeVisible(phase);
     
     phaseLabel.attachToComponent(&phase, false);
+    powerLabel.attachToComponent(&power, false);
     
     //Example of power button with text in middle (utilising juce::toggleButton).
     power.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPowerToggle);
@@ -86,7 +87,7 @@ void MainComponent::resized()
     balance.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
     depth.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
     freq.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
-    phase.setBounds(freq.getX() + dialSize + 25, getHeight() / 2 - 200, buttonWidth, buttonHeight);
+    phase.setBounds(freq.getX() + dialSize + 25, getHeight() / 2 - 100, buttonWidth, buttonHeight);
     power.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
     mute.setBounds(power.getX(), power.getY() + 75, buttonWidth, buttonHeight);
     box.setBounds(mute.getX(), mute.getY() + 75, buttonWidth, buttonHeight);

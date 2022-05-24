@@ -32,6 +32,7 @@ public:
 private:
     
     void initProperties(juce::String labelText);
+    void componentMovedOrResized(Component& component, bool /*wasMoved*/, bool /*wasResized*/) override;
     
 };
 

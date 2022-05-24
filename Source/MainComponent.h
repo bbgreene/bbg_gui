@@ -27,7 +27,7 @@ private:
     
 //    Create an instance like this:
 //        * bbg_gui::bbg_Dial { " samples", 0.0, 50.0, 0.1, 0.0, 0.0};
-//        * " samples" is the text in the dial's number textbox
+//        * " samples" is the desired units in the dial's number textbox
 //        * 0.0 is the range start
 //        * 10.0 is the range end
 //        * 0.1 is the interval between each dial setting
@@ -44,13 +44,14 @@ private:
     bbg_gui::bbg_Label depthLabel { "DEPTH" };
     bbg_gui::bbg_Label freqLabel { "FREQ" };
     bbg_gui::bbg_Label phaseLabel { "PHASE" };
+    bbg_gui::bbg_Label powerLabel { "POWER" };
     
     //Creating Toggle buttons
     bbg_gui::bbg_Toggle phase { "Phase" };
     bbg_gui::bbg_Toggle power { "Power" };
     
     //Creating a simple push button
-    bbg_gui::bbg_PushButton mute { "Mute" };
+    bbg_gui::bbg_PushButton mute { "MUTE" };
     
     //Creating a simple drop down combobox menu
     bbg_gui::bbg_Menu box;
