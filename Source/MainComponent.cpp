@@ -36,7 +36,7 @@ MainComponent::MainComponent()
     depthLabel.attachToComponent(&depth, false);
     freqLabel.attachToComponent(&freq, false);
     
-        //*** 2 example of toggle buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h
+        //*** 2 examples of toggle buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h
     
     //Example of phase button(utilising juce::toggleButton). Customisable colours used to override initProperties() in Toggle.cpp/h
     phase.setToggleStyle(bbg_gui::bbg_Toggle::ToggleStyle::kPhaseToggle);
@@ -57,7 +57,7 @@ MainComponent::MainComponent()
     //Example of Push Button (utilising juce::textButton)
     addAndMakeVisible(mute);
     
-        //*** 1 example a Menu. The colours can be edited here to override initProperties() in Menu.cpp/h
+        //*** 1 example of a Menu. The colours can be edited here to override initProperties() in Menu.cpp/h
     
     //Example of ComboBox Menu (utilising juce::textButton)
     box.setText("Waveform");
