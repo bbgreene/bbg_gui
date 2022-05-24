@@ -18,18 +18,19 @@ MainComponent::MainComponent()
     
     //Example of dial with simple tick to define current position and dots on the outside 
     balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
+//    balance.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::yellow);
     addAndMakeVisible(balance);
     
     //Example of modern style dial with text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
     depth.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialModernStyle);
-    depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
-    depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
+//    depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
+//    depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(depth);
     
     //Example of modern style dial with dots and text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
     freq.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotModernStyle);
-    freq.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
-    freq.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
+//    freq.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
+//    freq.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     addAndMakeVisible(freq);
     
     //Attaching labels to dials. Customisable colours used to override initProperties() in Label.cpp/h

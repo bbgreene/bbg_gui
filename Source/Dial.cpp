@@ -51,14 +51,16 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
                 setNumDecimalPlacesToDisplay (0);
         };
     
-    //previous colours used
-//    setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::orange);
-//    setColour(juce::Slider::ColourIds::thumbColourId, juce::Colours::orange);
-//    setColour(juce::Slider::ColourIds::trackColourId, juce::Colours::black);
-//
     //modern dial using custom colours
     setColour (juce::Slider::textBoxTextColourId, CustomColours::black);
     setColour (juce::Slider::textBoxOutlineColourId, CustomColours::grey);
+    
+    //Dial colours used for filling arc with value
     setColour (juce::Slider::rotarySliderFillColourId, CustomColours::blue);
+    //Colour used to fill full middle area of dial
+    setColour (juce::Slider::thumbColourId, CustomColours::creamWhite);
+    //Colour used for tick/back arc/dots in moderndotdial. Colour used for large back arc in moderndial.
+    setColour (juce::Slider::rotarySliderOutlineColourId, CustomColours::blackGrey);
+
 }
 
