@@ -319,7 +319,7 @@ Label* dialModernStyle::createSliderTextBox(Slider & slider)
     l->setColour (Label::textWhenEditingColourId, slider.findColour (Slider::textBoxTextColourId));
     l->setColour (Label::outlineWhenEditingColourId, juce::Colours::transparentWhite);
     l->setInterceptsMouseClicks (false, false);
-    l->setFont (18.0f);
+    l->setFont (25.0f);
 
     return l;
 }
@@ -443,7 +443,7 @@ Label* dialDotModernStyle::createSliderTextBox(Slider & slider)
     l->setColour (Label::textWhenEditingColourId, slider.findColour (Slider::textBoxTextColourId));
     l->setColour (Label::outlineWhenEditingColourId, juce::Colours::transparentWhite);
     l->setInterceptsMouseClicks (false, false);
-    l->setFont (18.0f);
+    l->setFont (25.0f);
 
     return l;
 }
