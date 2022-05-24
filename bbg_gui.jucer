@@ -4,24 +4,26 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" cppLanguageStandard="17">
   <MAINGROUP id="Wb8E2A" name="bbg_gui">
     <GROUP id="{7F4A0BA8-DBC9-69B8-9EF7-D0A6D5200A7E}" name="Source">
+      <GROUP id="{8FF1265C-B1BE-B7D4-DAF1-54E66D3855F8}" name="bbg_gui">
+        <FILE id="kpXjAb" name="Label.cpp" compile="1" resource="0" file="Source/Label.cpp"/>
+        <FILE id="xr32C4" name="Label.h" compile="0" resource="0" file="Source/Label.h"/>
+        <FILE id="ZU4pWZ" name="CustomColours.h" compile="0" resource="0" file="Source/CustomColours.h"/>
+        <FILE id="Cphv8B" name="Dial.cpp" compile="1" resource="0" file="Source/Dial.cpp"/>
+        <FILE id="faajyv" name="Dial.h" compile="0" resource="0" file="Source/Dial.h"/>
+        <FILE id="OOKjih" name="Menu.cpp" compile="1" resource="0" file="Source/Menu.cpp"/>
+        <FILE id="LZwbXY" name="Menu.h" compile="0" resource="0" file="Source/Menu.h"/>
+        <FILE id="jf7ZmP" name="PushButton.cpp" compile="1" resource="0" file="Source/PushButton.cpp"/>
+        <FILE id="rOLLUy" name="PushButton.h" compile="0" resource="0" file="Source/PushButton.h"/>
+        <FILE id="yINnAy" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>
+        <FILE id="izPSPH" name="StyleSheet.h" compile="0" resource="0" file="Source/StyleSheet.h"/>
+        <FILE id="B70wcD" name="Toggle.cpp" compile="1" resource="0" file="Source/Toggle.cpp"/>
+        <FILE id="rP4TJq" name="Toggle.h" compile="0" resource="0" file="Source/Toggle.h"/>
+      </GROUP>
       <FILE id="v9FYpH" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="wOGxE1" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="LjQbtr" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
     </GROUP>
-    <FILE id="kpXjAb" name="Label.cpp" compile="1" resource="0" file="Source/Label.cpp"/>
-    <FILE id="xr32C4" name="Label.h" compile="0" resource="0" file="Source/Label.h"/>
-    <FILE id="ZU4pWZ" name="CustomColours.h" compile="0" resource="0" file="Source/CustomColours.h"/>
-    <FILE id="Cphv8B" name="Dial.cpp" compile="1" resource="0" file="Source/Dial.cpp"/>
-    <FILE id="faajyv" name="Dial.h" compile="0" resource="0" file="Source/Dial.h"/>
-    <FILE id="OOKjih" name="Menu.cpp" compile="1" resource="0" file="Source/Menu.cpp"/>
-    <FILE id="LZwbXY" name="Menu.h" compile="0" resource="0" file="Source/Menu.h"/>
-    <FILE id="jf7ZmP" name="PushButton.cpp" compile="1" resource="0" file="Source/PushButton.cpp"/>
-    <FILE id="rOLLUy" name="PushButton.h" compile="0" resource="0" file="Source/PushButton.h"/>
-    <FILE id="yINnAy" name="StyleSheet.cpp" compile="1" resource="0" file="Source/StyleSheet.cpp"/>
-    <FILE id="izPSPH" name="StyleSheet.h" compile="0" resource="0" file="Source/StyleSheet.h"/>
-    <FILE id="B70wcD" name="Toggle.cpp" compile="1" resource="0" file="Source/Toggle.cpp"/>
-    <FILE id="rP4TJq" name="Toggle.h" compile="0" resource="0" file="Source/Toggle.h"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
   <EXPORTFORMATS>
