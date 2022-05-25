@@ -10,7 +10,7 @@
 
 #include "Dial.h"
 
-void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, double rangeEnd, double intervalValue, double startValue, double returnValue)
+void bbg_gui::bbg_Dial::initProperties(juce::String suffixOne, double rangeStart, double rangeEnd, double intervalValue, double startValue, double returnValue)
 {
     //changing the dial start and end angle... 1.5 = 9am start, 3.0 = 6pm end
 //        auto rotaryParams = getRotaryParameters();
@@ -32,7 +32,7 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     setLookAndFeel(&dialLiveStyleLAF);
     
     setTextBoxStyle(juce::Slider::TextBoxBelow, false, 100, 25);
-    setTextValueSuffix(suffix);
+    setTextValueSuffix(suffixOne);
     // how can I continuously send a value to the slider when the textbox value is changed?
     
     // modifies the decimal places of the values displayed in the slider text box.

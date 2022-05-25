@@ -21,14 +21,14 @@ namespace bbg_gui
 class bbg_Dial : public juce::Slider
 {
 public:
-    bbg_Dial(juce::String suffix,
+    bbg_Dial(juce::String suffixOne,
                double rangeStart,
                double rangeEnd,
                double intervalValue,
                double startValue,
                double returnValue)
     {
-        initProperties(suffix, rangeStart, rangeEnd, intervalValue, startValue, returnValue);
+        initProperties(suffixOne, rangeStart, rangeEnd, intervalValue, startValue, returnValue);
     }
     
     ~bbg_Dial() override
@@ -89,7 +89,7 @@ private:
     juce::dialDotModernStyle dialDotModernStyleLAF;
     
     // properties of an individual dial. When a dial is instantiated with variables, these are passed to this function
-    void initProperties(juce::String suffix, double rangeStart, double rangeEnd, double intervalValue, double startValue, double returnValue);
+    void initProperties(juce::String suffixOne, double rangeStart, double rangeEnd, double intervalValue, double startValue, double returnValue);
     
 };
 

@@ -38,7 +38,7 @@ private:
     bbg_gui::bbg_Dial delay { " Smp", 0.0, 50.0, 0.1, 0.0, 0.0};
     bbg_gui::bbg_Dial balance { " Pan", -50.0, 50.0, 0.1, 0.0, 0.0 };
     bbg_gui::bbg_Dial depth { " %", 0.0, 10.0, 0.1, 0.0, 0.0 };
-    bbg_gui::bbg_Dial freq { " Hz", 0.0, 500.0, 0.1, 0.0, 0.0};
+    bbg_gui::bbg_Dial freq { " Hz", 0.0, 50.0, 0.1, 0.0, 0.0};
     
     //Creating labels for dials
     bbg_gui::bbg_dialLabel depthLabel { "DEPTH" };
