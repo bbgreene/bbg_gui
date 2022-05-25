@@ -389,7 +389,7 @@ void juce::dialDotModernStyle::drawRotarySlider(Graphics & g, int x, int y, int 
     auto fullRadius = juce::jmin (dialBounds.getWidth() / 2.0f, dialBounds.getHeight() / 2.0f);
 
     //dot colour
-    g.setColour (dotFill);
+    g.setColour (dotFill.brighter());
 
     centre = dialBounds.getCentre();
 
@@ -397,10 +397,10 @@ void juce::dialDotModernStyle::drawRotarySlider(Graphics & g, int x, int y, int 
     if (fullRadius > 50.0f)
     {
         /** How many dots to draw, works well as num dial intervals + 1 for small ranges, e.g. [0 - 10]*/
-        for (int i = 0; i < 11; ++i)
+        for (int i = 0; i < 30; ++i)
         {
             /** IF you change the number of dots, do i / (num dots - 1) */
-            const auto angle = juce::jmap (i / 10.0f, rotaryStartAngle, rotaryEndAngle);
+            const auto angle = juce::jmap (i / (30.0f - 1.0f), rotaryStartAngle, rotaryEndAngle);
             const auto point = centre.getPointOnCircumference (fullRadius - 2.0f, angle);
 
             //dot thickness
