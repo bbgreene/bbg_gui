@@ -16,7 +16,7 @@ void bbg_gui::bbg_PushButton::initProperties(juce::String labelText)
     setButtonText(labelText);
     setClickingTogglesState(true);
     
-    setColour(juce::TextButton::ColourIds::buttonOnColourId, CustomColours::blue);
+    setColour(juce::TextButton::ColourIds::buttonOnColourId, CustomColours::blue.brighter());
     setColour(juce::TextButton::ColourIds::buttonColourId, CustomColours::creamWhite);
     setColour(juce::TextButton::ColourIds::textColourOffId, CustomColours::black);
     setColour(juce::TextButton::ColourIds::textColourOnId, CustomColours::creamWhite);
