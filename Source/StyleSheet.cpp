@@ -338,9 +338,9 @@ void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int wid
     juce::Path stick;
     auto stickWidth = lineW * 2.0f;
 
-    stick.addRectangle (-stickWidth / 2, -stickWidth / 2, stickWidth, radius + lineW - 4.0f);
+    stick.addRectangle (-stickWidth / 2 + 2.0f, -stickWidth / 2, stickWidth, radius + lineW - 4.0f);
     g.setColour (stickDial);
-    g.fillPath (stick, juce::AffineTransform::rotation (toAngle + 3.12f).translated (bounds.getCentre()));
+    g.fillPath (stick, juce::AffineTransform::rotation (toAngle + 3.14f).translated (bounds.getCentre()));
 
     g.fillEllipse (bounds.reduced (radius * 0.30));
 }
