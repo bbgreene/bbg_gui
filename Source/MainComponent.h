@@ -53,7 +53,7 @@ private:
     bbg_gui::bbg_toggleLabel powerLabel { "POWER" };
     
     //Creating a simple push button
-    bbg_gui::bbg_PushButton mute { "MUTE" };
+    bbg_gui::bbg_PushButton mute { "Mute" };
     
     //Creating a simple drop down combobox menu
     bbg_gui::bbg_Menu box;

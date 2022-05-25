@@ -105,6 +105,11 @@ class ComboBoxOneStyle : public LookAndFeel_V4
 public:
     
     void drawComboBox (Graphics& g, int width, int height, bool, int, int, int, int, ComboBox& box) override;
+    
+    //ComboBox One Style font size overrid
+    Font getComboBoxFont (ComboBox& box) override;
+    
+    Font getPopupMenuFont() override;
 };
 
 }//my namespace

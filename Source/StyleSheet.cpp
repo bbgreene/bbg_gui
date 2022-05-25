@@ -555,4 +555,19 @@ void juce::ComboBoxOneStyle::drawComboBox(Graphics &g, int width, int height, bo
     g.strokePath (path, PathStrokeType (2.0f));
 }
 
+//ComboBox One Style font size
+Font ComboBoxOneStyle::getComboBoxFont (ComboBox& box)
+{
+    return { jmin (25.0f, (float) box.getHeight() * 0.85f) };
 }
+
+//ComboBox One Style popupmenu font size
+Font ComboBoxOneStyle::getPopupMenuFont()
+{
+    return Font (23.0f);
+}
+
+
+}
+
+
