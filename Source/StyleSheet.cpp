@@ -259,6 +259,7 @@ void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int wid
     auto toAngle = rotaryStartAngle + sliderPos * (rotaryEndAngle - rotaryStartAngle);
     auto lineW = radius * 0.085f;
     auto arcRadius = radius - lineW * 1.6f;
+    auto centre = bounds.getCentre();
 
     // dial background path
     Path backgroundArc;
@@ -326,15 +327,22 @@ void juce::dialModernStyle::drawRotarySlider(Graphics & g, int x, int y, int wid
         g.strokePath (valueArc, PathStrokeType (lineW, PathStrokeType::curved, PathStrokeType::rounded));
         }
     }
+    auto dialRadius = std:: max (radius - 3.0f * lineW, 10.0f);
+
+    //centre dial outline circle colour
+    g.setColour (stickDial.darker());
+
+    //centre dial outline thickness
+    g.drawEllipse (centre.getX() - dialRadius, centre.getY() - dialRadius, dialRadius * 2.0f, dialRadius * 2.0f, 4.0f);
     
     juce::Path stick;
     auto stickWidth = lineW * 2.0f;
 
-    stick.addRectangle (-stickWidth / 2, -stickWidth / 2, stickWidth, radius + lineW);
+    stick.addRectangle (-stickWidth / 2, -stickWidth / 2, stickWidth, radius + lineW - 4.0f);
     g.setColour (stickDial);
     g.fillPath (stick, juce::AffineTransform::rotation (toAngle + 3.12f).translated (bounds.getCentre()));
 
-    g.fillEllipse (bounds.reduced (radius * 0.25));
+    g.fillEllipse (bounds.reduced (radius * 0.30));
 }
 
 // modern dial. overriding this function to put textbox in centre of slider/dial

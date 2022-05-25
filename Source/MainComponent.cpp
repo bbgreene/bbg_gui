@@ -18,7 +18,6 @@ MainComponent::MainComponent()
     
     //Example of dial with simple tick to define current position and dots on the outside 
     depth.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
-//    depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::yellow);
     addAndMakeVisible(depth);
     
     //Example of modern style dial with text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
@@ -29,8 +28,6 @@ MainComponent::MainComponent()
     
     //Example of modern style dial with dots and text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
     freq.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotModernStyle);
-//    freq.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
-//    freq.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
     
     addAndMakeVisible(freq);
     
