@@ -79,6 +79,9 @@ public:
         }
     }
     
+    // function for a dial that needs different suffix for panning - returning C, L, R depending on value
+    void panDialSuffixChange (Slider& slider);
+    
 private:
     
     // Instantance of custom lookAndFeel from StyleSheet

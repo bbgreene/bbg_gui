@@ -23,19 +23,8 @@ MainComponent::MainComponent()
     
     //Example of modern style dial with text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
     balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialModernStyle);
-//    depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
-//    depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
-    balance.onValueChange = [&]()
-    {
-        DBG(balance.getValue());
-        if (balance.getValue() == 0.0)
-            balance.setTextValueSuffix(" C");
-        else if (balance.getValue() > 0.0)
-            balance.setTextValueSuffix(" R");
-        else if (balance.getValue() < 0.0)
-            balance.setTextValueSuffix(" L");
-        else {}
-    };
+    balance.panDialSuffixChange(balance); // example of function call for a dial that needs different suffix for panning - returning C, L, R depending on value
+    
     addAndMakeVisible(balance);
     
     //Example of modern style dial with dots and text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h

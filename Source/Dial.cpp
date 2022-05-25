@@ -38,18 +38,18 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     // modifies the decimal places of the values displayed in the slider text box.
     // Using this member function and a lambda function called onValueChange, we set the value in the text box to always display three numbers.
     onValueChange = [&]()
-        {
-            if (getValue() == 0.0)
-                setNumDecimalPlacesToDisplay(1);
-            else if (getValue() < 10 && getValue() > -10)
-                setNumDecimalPlacesToDisplay (2);
-            else if (getValue() >= 10 && getValue() < 100)
-                setNumDecimalPlacesToDisplay (1);
-            else if (getValue() <= -10 && getValue() > -100)
-                setNumDecimalPlacesToDisplay (1);
-            else
-                setNumDecimalPlacesToDisplay (0);
-        };
+    {
+        if (getValue() == 0.0)
+            setNumDecimalPlacesToDisplay(1);
+        else if (getValue() < 10 && getValue() > -10)
+            setNumDecimalPlacesToDisplay (2);
+        else if (getValue() >= 10 && getValue() < 100)
+            setNumDecimalPlacesToDisplay (1);
+        else if (getValue() <= -10 && getValue() > -100)
+            setNumDecimalPlacesToDisplay (1);
+        else
+            setNumDecimalPlacesToDisplay (0);
+    };
 
     //modern dial using custom colours
     setColour (juce::Slider::textBoxTextColourId, CustomColours::black);
@@ -63,4 +63,21 @@ void bbg_gui::bbg_Dial::initProperties(juce::String suffix, double rangeStart, d
     setColour (juce::Slider::rotarySliderOutlineColourId, CustomColours::blackGrey);
 
 }
+
+// function for a dial that needs different suffix for panning - returning C, L, R depending on value. Whatever dial is using this, it ignores the above onValueChange regarding decimal places.
+void bbg_gui::bbg_Dial::panDialSuffixChange(Slider& slider)
+{
+    slider.onValueChange = [&]()
+    {
+        DBG(slider.getValue());
+        if (slider.getValue() == 0.0)
+            slider.setTextValueSuffix(" C");
+        else if (slider.getValue() > 0.0)
+            slider.setTextValueSuffix(" R");
+        else if (slider.getValue() < 0.0)
+            slider.setTextValueSuffix(" L");
+        else {}
+    };
+}
+
 
