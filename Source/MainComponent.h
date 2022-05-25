@@ -36,12 +36,12 @@ private:
     
     bbg_gui::bbg_Dial gain { " dB", -24.0, 24.0, 0.1, 0.0, 0.0 };
     bbg_gui::bbg_Dial delay { " Smp", 0.0, 50.0, 0.1, 0.0, 0.0};
-    bbg_gui::bbg_Dial balance { " Pan", -50.0, 50.0, 0.1, 0.0, 0.0 };
-    bbg_gui::bbg_Dial depth { " %", 0.0, 10.0, 0.1, 0.0, 0.0 };
+    bbg_gui::bbg_Dial depth { " %", -50.0, 50.0, 0.1, 0.0, 0.0 };
+    bbg_gui::bbg_Dial balance { " C", -10.0, 10.0, 0.1, 0.0, 0.0 };
     bbg_gui::bbg_Dial freq { " Hz", 0.0, 50.0, 0.1, 0.0, 0.0};
     
     //Creating labels for dials
-    bbg_gui::bbg_dialLabel depthLabel { "DEPTH" };
+    bbg_gui::bbg_dialLabel balanceLabel { "BALANCE" };
     bbg_gui::bbg_dialLabel freqLabel { "FREQ" };
     
     //Creating Toggle buttons

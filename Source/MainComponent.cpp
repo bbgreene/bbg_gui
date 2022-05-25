@@ -17,24 +17,36 @@ MainComponent::MainComponent()
     addAndMakeVisible(delay);
     
     //Example of dial with simple tick to define current position and dots on the outside 
-    balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
-//    balance.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::yellow);
-    addAndMakeVisible(balance);
+    depth.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotStyle);
+//    depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::yellow);
+    addAndMakeVisible(depth);
     
     //Example of modern style dial with text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
-    depth.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialModernStyle);
+    balance.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialModernStyle);
 //    depth.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
 //    depth.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
-    addAndMakeVisible(depth);
+    balance.onValueChange = [&]()
+    {
+        DBG(balance.getValue());
+        if (balance.getValue() == 0.0)
+            balance.setTextValueSuffix(" C");
+        else if (balance.getValue() > 0.0)
+            balance.setTextValueSuffix(" R");
+        else if (balance.getValue() < 0.0)
+            balance.setTextValueSuffix(" L");
+        else {}
+    };
+    addAndMakeVisible(balance);
     
     //Example of modern style dial with dots and text box/label in middle. Customisable colours used to override initProperties() in Dial.cpp/h
     freq.setDialStyle(bbg_gui::bbg_Dial::DialStyle::kDialDotModernStyle);
 //    freq.setColour(juce::Slider::ColourIds::rotarySliderOutlineColourId, CustomColours::blackGrey);
 //    freq.setColour(juce::Slider::ColourIds::thumbColourId, CustomColours::creamWhite);
+    
     addAndMakeVisible(freq);
     
     //Attaching labels to dials. Customisable colours used to override initProperties() in Label.cpp/h
-    depthLabel.attachToComponent(&depth, false);
+    balanceLabel.attachToComponent(&balance, false);
     freqLabel.attachToComponent(&freq, false);
     
         //*** 2 examples of toggle buttons. The colours of each can be edited here to override initProperties() in Toggle.cpp/h
@@ -90,11 +102,14 @@ void MainComponent::resized()
     
     gain.setBounds(0, getHeight() / 2 - 100, dialSize, dialSize);
     delay.setBounds(gain.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
-    balance.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
-    depth.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
-    freq.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
+    depth.setBounds(delay.getX() + dialSize, getHeight() / 2 -100, dialSize, dialSize);
+    balance.setBounds(depth.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
+    freq.setBounds(balance.getX() + dialSize, getHeight() / 2 - 100, dialSize, dialSize);
     phase.setBounds(freq.getX() + dialSize + 25, getHeight() / 2 - 100, buttonWidth, buttonHeight);
     power.setBounds(phase.getX(), phase.getY() + 75, buttonWidth, buttonHeight);
     mute.setBounds(power.getX(), power.getY() + 75, buttonWidth, buttonHeight);
     box.setBounds(mute.getX(), mute.getY() + 75, buttonWidth, buttonHeight);
 }
+
+
+
