@@ -629,7 +629,7 @@ void juce::PushButtonStyle::drawButtonText (Graphics& g, TextButton& button,
 
 void juce::PushButtonStyle::drawButtonBackground (Graphics& g, Button& button, const Colour& backgroundColour, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
 {
-    auto cornerSize = 6.0f;
+    auto cornerSize = 25.0f; // size of rectangle corner
     auto bounds = button.getLocalBounds().toFloat().reduced (0.5f, 0.5f);
     //2nd number for saturation changed to 1.0 from 0.9...0.9 was changing the colour of button slightly
     auto baseColour = backgroundColour.withMultipliedSaturation (button.hasKeyboardFocus (true) ? 1.3f : 1.0f)
@@ -658,15 +658,15 @@ void juce::PushButtonStyle::drawButtonBackground (Graphics& g, Button& button, c
 
         g.fillPath (path);
 
-        g.setColour (button.findColour (ComboBox::outlineColourId));
-        g.strokePath (path, PathStrokeType (1.0f));
+        g.setColour (button.findColour (0x1000c00));
+        g.strokePath (path, PathStrokeType (8.0f));
     }
     else
     {
         g.fillRoundedRectangle (bounds, cornerSize);
 
-        g.setColour (button.findColour (ComboBox::outlineColourId));
-        g.drawRoundedRectangle (bounds, cornerSize, 1.0f);
+        g.setColour (button.findColour (0x1000c00));
+        g.drawRoundedRectangle (bounds, cornerSize + 10.0f, 9.0f);
     }
 }
 
