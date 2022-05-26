@@ -96,7 +96,7 @@ class PushButtonStyle : public LookAndFeel_V4
 public:
     
     void drawButtonText (Graphics& g, TextButton& button, bool, bool) override;
-    
+    void drawButtonBackground (Graphics& g, Button& button, const Colour& backgroundColour, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
 };
 
 //ComboBox One Style
