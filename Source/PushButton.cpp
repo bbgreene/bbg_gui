@@ -20,7 +20,7 @@ void bbg_gui::bbg_PushButton::initProperties(juce::String labelText)
     setColour(juce::TextButton::ColourIds::buttonColourId, CustomColours::creamWhite);
     setColour(juce::TextButton::ColourIds::textColourOffId, CustomColours::black);
     setColour(juce::TextButton::ColourIds::textColourOnId, CustomColours::creamWhite.brighter());
-    setColour(0x1000c00, CustomColours::blue.darker()); // outline colour ID
+    setColour(0x1000c00, CustomColours::creamWhite.darker()); // outline colour ID
     
 //    setColour(0x1000100, CustomColours::blackGrey);
 //    setColour(0x1000101, juce::Colours::lightgoldenrodyellow.darker(0.2f));
