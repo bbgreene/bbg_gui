@@ -77,6 +77,17 @@ void bbg_gui::bbg_Dial::panDialSuffixChange(Slider& slider)
         else if (slider.getValue() < 0.0)
             slider.setTextValueSuffix(" L");
         else {}
+        
+        if (getValue() == 0.0)
+            setNumDecimalPlacesToDisplay(1);
+        else if (getValue() < 10 && getValue() > -10)
+            setNumDecimalPlacesToDisplay (2);
+        else if (getValue() >= 10 && getValue() < 100)
+            setNumDecimalPlacesToDisplay (1);
+        else if (getValue() <= -10 && getValue() > -100)
+            setNumDecimalPlacesToDisplay (1);
+        else
+            setNumDecimalPlacesToDisplay (0);
     };
 }
 
